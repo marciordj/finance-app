@@ -1,7 +1,6 @@
 import React from 'react'
-import { Text } from 'react-native';
 
-import { Container, Header, Photo, User, UserGreeting, UserInfo, UserName, Wrapper } from './styles'
+import { Container, Header, Photo, User, UserGreeting, UserInfo, UserName, Wrapper, Icon } from './styles'
 
 const Dashboard = () => {
   return (
@@ -11,10 +10,11 @@ const Dashboard = () => {
           <UserInfo>
             <Photo source={{ uri: 'https://avatars.githubusercontent.com/u/54960643?v=4' }} />
             <User>
-              <UserGreeting>Oi</UserGreeting>
-              <UserName>Cara de boi</UserName>
+              <UserGreeting>Olá,</UserGreeting>
+              <UserName>Marcio</UserName>
             </User>
           </UserInfo>
+          <Icon name="power" />
         </Wrapper>
       </Header>
     </Container>
