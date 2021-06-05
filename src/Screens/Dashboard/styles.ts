@@ -56,3 +56,9 @@ export const Icon = styled(Feather) `
   color: ${({theme}) => theme.colors.orange};
   font-size: ${RFValue(24)}px;
 `
+
+export const HighlightCardsList = styled.ScrollView.attrs({
+  horizontal: true, 
+  showsHorizontalScrollIndicator: true,
+  contentContainerStyle: {paddingHorizontal: 24}
+}) `` //as props que eram pra colocar no scrollview no dashboard, coloca aqui

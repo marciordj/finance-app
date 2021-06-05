@@ -6,6 +6,7 @@ import { Feather } from '@expo/vector-icons';
 
 export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.shape};
+  margin-right: 16px;
   width: ${RFValue(300)}px;
   border-radius: 5px;
   padding: 19px 23px ${RFValue(42)}px 23px;
@@ -13,6 +14,7 @@ export const Container = styled.View`
 
 export const Header = styled.View `
   flex-direction: row;
+  justify-content: space-between;
 `
 
 export const Title = styled.Text `
@@ -23,7 +25,7 @@ export const Title = styled.Text `
 
 export const Icon = styled(Feather) `
   font-size: ${RFValue(40)}px;
-  
+  color: ${({theme}) => theme.colors.succes};
 `
 
 export const Content = styled.View ``

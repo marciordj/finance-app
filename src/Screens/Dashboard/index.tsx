@@ -1,7 +1,16 @@
 import React from 'react'
 import HighlightCard from '../../components/HighlightCard'
 
-import { Container, Header, Photo, User, UserGreeting, UserInfo, UserName, Wrapper, Icon } from './styles'
+import { Container, 
+  Header,
+  Photo, 
+  User, 
+  UserGreeting, 
+  UserInfo, 
+  UserName, 
+  Wrapper, 
+  Icon, 
+  HighlightCardsList } from './styles'
 
 const Dashboard = () => {
   return (
@@ -19,7 +28,11 @@ const Dashboard = () => {
         </Wrapper>
       </Header>
 
-      <HighlightCard />
+      <HighlightCardsList>
+        <HighlightCard />
+        <HighlightCard />
+        <HighlightCard />
+      </HighlightCardsList>
     </Container>
   )
 }
