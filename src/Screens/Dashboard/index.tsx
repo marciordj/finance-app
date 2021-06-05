@@ -1,4 +1,5 @@
 import React from 'react'
+import HighlightCard from '../../components/HighlightCard'
 
 import { Container, Header, Photo, User, UserGreeting, UserInfo, UserName, Wrapper, Icon } from './styles'
 
@@ -17,6 +18,8 @@ const Dashboard = () => {
           <Icon name="power" />
         </Wrapper>
       </Header>
+
+      <HighlightCard />
     </Container>
   )
 }
