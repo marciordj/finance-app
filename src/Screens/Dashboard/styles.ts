@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 export const Container = styled.View`
   flex: 1;
@@ -8,17 +9,16 @@ export const Container = styled.View`
 `
 
 export const Header = styled.View `
+  justify-content: flex-start;
   width: 100%;
   height: ${RFPercentage(42)}px;
   background-color: ${({ theme }) => theme.colors.primary};
-
-  justify-content: center;
-  align-items: center;
 `
 
 export const Wrapper = styled.View `
   width: 100%;
   padding: 0 24px;
+  margin-top: ${getStatusBarHeight() + RFValue(28)}px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -57,8 +57,12 @@ export const Icon = styled(Feather) `
   font-size: ${RFValue(24)}px;
 `
 
-export const HighlightCardsList = styled.ScrollView.attrs({
+export const HighlightCardsList = styled.ScrollView.attrs({ //as props que eram pra colocar no scrollview no dashboard, coloca aqui
   horizontal: true, 
-  showsHorizontalScrollIndicator: true,
+  showsHorizontalScrollIndicator: false,
   contentContainerStyle: {paddingHorizontal: 24}
-}) `` //as props que eram pra colocar no scrollview no dashboard, coloca aqui
+}) `
+  width: 100%;
+  position: absolute;
+  margin-top: ${RFPercentage(20)}px;
+` 
