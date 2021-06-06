@@ -2,19 +2,32 @@ import React from 'react';
 
 import { Amount, Container, Content, Header, Icon, LastTransaction, Title } from './style';
 
-const HighlightCard = () => {
+interface IProps {
+  title: string;
+  amount: string;
+  lastTransaction: string;
+  type: 'income' | 'outcome' | 'total'
+}
+
+const HighlightCard = ({ title, amount, lastTransaction, type }: IProps) => {
+  const icon = {
+    income: 'arrow-up-circle',
+    outcome: 'arrow-down-circle',
+    total: 'dollar-sign'
+  }
+
   return (
-    <Container>
+    <Container type={type} >
       <Header>
-        <Title>Entradas</Title>
-        <Icon name='arrow-up-circle' />
+        <Title type={type}>{title}</Title>
+        <Icon name={icon[type]} type={type} />
       </Header>
 
       <Content>
-        <Amount>
-          R$ 17.400,00
+        <Amount type={type}>
+          {amount}
         </Amount>
-        <LastTransaction>Última entrada dia 13 de abril</LastTransaction>
+        <LastTransaction type={type}>{lastTransaction}</LastTransaction>
       </Content>
     </Container>
   )
