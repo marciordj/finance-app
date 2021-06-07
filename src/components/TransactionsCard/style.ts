@@ -2,6 +2,9 @@ import styled from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 import {RFValue} from 'react-native-responsive-fontsize';
 
+interface ITransactionStyleProps {
+  type: 'positive' | 'negative'
+}
 
 export const Container = styled.View `
   background-color: ${({ theme }) => theme.colors.shape};
@@ -17,12 +20,10 @@ export const Title = styled.Text `
   
 `
 
-export const Amount = styled.Text `
+export const Amount = styled.Text<ITransactionStyleProps> `
   font-size: ${RFValue(20)}px;
   margin-top: 2px;
-  color: ${({ theme }) => theme.colors.success};
-
-
+  color: ${({ theme, type }) => type === 'positive' ? theme.colors.success : theme.colors.warning};
 `
 
 export const Footer = styled.View `
@@ -42,7 +43,7 @@ export const Icon = styled(Feather) `
   color: ${({ theme }) => theme.colors.text};
 `
 
-export const Type = styled.Text `
+export const CategoryName = styled.Text `
   color: ${({ theme }) => theme.colors.text};
   font-size: ${RFValue(17)}px;
   margin-left: 17px;

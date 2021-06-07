@@ -1,17 +1,21 @@
 import React from 'react';
 
-import { Amount, Category, Container, Date, Footer, Icon, Title, Type } from './style';
+import { Amount, Category, Container, Date, Footer, Icon, Title, CategoryName } from './style';
+
+export interface ITransactionCardProps {
+  type: 'positive' | 'negative';
+  title: string;
+  amount: string;
+  category: {
+    name: string;
+    icon: string;
+  };
+  date: string;
+  
+}
 
 interface IProps {
-  data: {
-    title: string;
-    amount: string;
-    category: {
-      name: string;
-      icon: string;
-    };
-    date: string;
-  }
+  data: ITransactionCardProps
 }
 
 
@@ -20,12 +24,14 @@ const TransactionCard = ({ data }: IProps) => {
     <Container>
       <Title>{data?.title}</Title>
 
-      <Amount>{data?.amount}</Amount>
+      <Amount type={data.type}>
+        {data.type === 'positive' ? data.amount : `- ${data.amount}`}
+      </Amount>
 
       <Footer>
         <Category>
           <Icon name={data?.category?.icon} />
-          <Type>{data?.category?.name}</Type>
+          <CategoryName>{data?.category?.name}</CategoryName>
         </Category>
 
         <Date>{data?.date}</Date>
