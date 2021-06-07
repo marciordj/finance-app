@@ -10,7 +10,9 @@ import { Container,
   UserName, 
   Wrapper, 
   Icon, 
-  HighlightCardsList } from './styles'
+  HighlightCardsList, 
+  Transactions,
+  Title} from './styles'
 
 const Dashboard = () => {
   return (
@@ -50,6 +52,10 @@ const Dashboard = () => {
         lastTransaction="Última entrada dia 13 de junho" 
         />
       </HighlightCardsList>
+
+      <Transactions>
+        <Title>Listagem</Title>
+      </Transactions>
     </Container>
   )
 }
