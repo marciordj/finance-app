@@ -1,0 +1,43 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "eslint.enable": true,
+  "eslint.trace.server": "messages",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "files.associations": {
+    "*.js": "javascriptreact",
+    ".env*": "properties",
+    ".prettierrc": "json",
+    "Fastfile": "ruby",
+    "Podfile": "ruby",
+    "apple-app-site-association": "json"
+  },
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.directory": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "*.apk": true,
+    "*.zip": true,
+    "android/.gradle": true,
+    "android/.idea": true,
+    "android/app/build": true,
+    "android/build": true,
+    "node_modules": true
+  },
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescriptHero.imports.organizeOnSave": false,
+  "editor.rulers": [
+    {
+      "column": 120,
+      "color": "#fd3e3e78"
+    }
+  ]
+}
