@@ -1,6 +1,15 @@
 import React from 'react';
 
-import { Amount, Category, Container, Date, Footer, Icon, Title, CategoryName } from './style';
+import {
+  Amount,
+  Category,
+  Container,
+  Date,
+  Footer,
+  Icon,
+  Title,
+  CategoryName,
+} from './style';
 
 export interface ITransactionCardProps {
   type: 'positive' | 'negative';
@@ -11,13 +20,11 @@ export interface ITransactionCardProps {
     icon: string;
   };
   date: string;
-  
 }
 
 interface IProps {
-  data: ITransactionCardProps
+  data: ITransactionCardProps;
 }
-
 
 const TransactionCard = ({ data }: IProps) => {
   return (
@@ -37,7 +44,7 @@ const TransactionCard = ({ data }: IProps) => {
         <Date>{data?.date}</Date>
       </Footer>
     </Container>
-  )
-}
+  );
+};
 
 export default TransactionCard;

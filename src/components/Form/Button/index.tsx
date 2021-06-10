@@ -7,12 +7,12 @@ interface IProps extends TouchableOpacityProps {
   title: string;
 }
 
-const Button = ({ title, ...rest }:IProps) => {
+const Button = ({ title, ...rest }: IProps) => {
   return (
-    <Container {...rest} >
+    <Container {...rest}>
       <Text>{title}</Text>
     </Container>
-  )
-}
+  );
+};
 
 export default Button;
