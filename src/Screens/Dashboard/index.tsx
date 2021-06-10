@@ -1,9 +1,7 @@
 import React from 'react';
 
 import HighlightCard from '../../components/HighlightCard';
-import TransactionCard, {
-  ITransactionCardProps,
-} from '../../components/TransactionsCard';
+import TransactionCard, { ITransactionCardProps } from '../../components/TransactionsCard';
 
 import {
   Container,
@@ -18,7 +16,7 @@ import {
   HighlightCardsList,
   Transactions,
   Title,
-  TransactionList,
+  TransactionList
 } from './styles';
 
 export interface IDataListProps extends ITransactionCardProps {
@@ -34,9 +32,9 @@ const Dashboard = () => {
       amount: 'R$ 12.000,00',
       category: {
         name: 'Vendas',
-        icon: 'dollar-sign',
+        icon: 'dollar-sign'
       },
-      date: '06/06/2021',
+      date: '06/06/2021'
     },
     {
       id: '2',
@@ -45,9 +43,9 @@ const Dashboard = () => {
       amount: 'R$ 59,00',
       category: {
         name: 'Alimentação',
-        icon: 'coffee',
+        icon: 'coffee'
       },
-      date: '06/02/2021',
+      date: '06/02/2021'
     },
     {
       id: '3',
@@ -56,10 +54,10 @@ const Dashboard = () => {
       amount: 'R$ 1.500,00',
       category: {
         name: 'Casa',
-        icon: 'shopping-bag',
+        icon: 'shopping-bag'
       },
-      date: '06/06/2021',
-    },
+      date: '06/06/2021'
+    }
   ];
 
   return (
@@ -69,7 +67,7 @@ const Dashboard = () => {
           <UserInfo>
             <Photo
               source={{
-                uri: 'https://avatars.githubusercontent.com/u/54960643?v=4',
+                uri: 'https://avatars.githubusercontent.com/u/54960643?v=4'
               }}
             />
             <User>
@@ -77,30 +75,30 @@ const Dashboard = () => {
               <UserName>Marcio</UserName>
             </User>
           </UserInfo>
-          <Icon name="power" />
+          <Icon name='power' />
         </Wrapper>
       </Header>
 
       <HighlightCardsList>
         <HighlightCard
-          type="income"
-          title="Entradas"
-          amount="R$ 17.400,00"
-          lastTransaction="Última entrada dia 13 de junho"
+          type='income'
+          title='Entradas'
+          amount='R$ 17.400,00'
+          lastTransaction='Última entrada dia 13 de junho'
         />
 
         <HighlightCard
-          type="outcome"
-          title="Saídas"
-          amount="R$ 17.400,00"
-          lastTransaction="Última entrada dia 13 de junho"
+          type='outcome'
+          title='Saídas'
+          amount='R$ 17.400,00'
+          lastTransaction='Última entrada dia 13 de junho'
         />
 
         <HighlightCard
-          type="total"
-          title="Total"
-          amount="R$ 17.400,00"
-          lastTransaction="Última entrada dia 13 de junho"
+          type='total'
+          title='Total'
+          amount='R$ 17.400,00'
+          lastTransaction='Última entrada dia 13 de junho'
         />
       </HighlightCardsList>
 

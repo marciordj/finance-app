@@ -1,14 +1,6 @@
 import React from 'react';
 
-import {
-  Amount,
-  Container,
-  Content,
-  Header,
-  Icon,
-  LastTransaction,
-  Title,
-} from './style';
+import { Amount, Container, Content, Header, Icon, LastTransaction, Title } from './style';
 
 interface IProps {
   title: string;
@@ -21,7 +13,7 @@ const HighlightCard = ({ title, amount, lastTransaction, type }: IProps) => {
   const icon = {
     income: 'arrow-up-circle',
     outcome: 'arrow-down-circle',
-    total: 'dollar-sign',
+    total: 'dollar-sign'
   };
 
   return (

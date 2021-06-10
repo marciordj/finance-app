@@ -53,7 +53,19 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "max-len": [
+      "warn",
+      120,
+      2,
+      {
+        "ignorePattern": "^(import|export)",
+        "ignoreUrls": true
+      }
+    ],
+    "max-lines": ["error", 450],
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "quotes": ["error", "single", { "avoidEscape": true }]
   },
   "settings": {
     "import/resolver": {

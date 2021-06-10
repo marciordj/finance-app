@@ -15,13 +15,13 @@ const Register = () => {
 
       <Form>
         <Fields>
-          <Input placeholder="Nome" />
-          <Input placeholder="Preço" />
+          <Input placeholder='Nome' />
+          <Input placeholder='Preço' />
 
           <TransactionTypeButton />
         </Fields>
 
-        <Button title="Enviar" />
+        <Button title='Enviar' />
       </Form>
     </Container>
   );

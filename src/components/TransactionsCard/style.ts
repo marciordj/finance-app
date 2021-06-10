@@ -22,8 +22,7 @@ export const Title = styled.Text`
 export const Amount = styled.Text<ITransactionStyleProps>`
   font-size: ${RFValue(20)}px;
   margin-top: 2px;
-  color: ${({ theme, type }) =>
-    type === 'positive' ? theme.colors.success : theme.colors.warning};
+  color: ${({ theme, type }) => (type === 'positive' ? theme.colors.success : theme.colors.warning)};
 `;
 
 export const Footer = styled.View`
