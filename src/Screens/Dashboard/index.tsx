@@ -65,11 +65,7 @@ const Dashboard = () => {
       <Header>
         <Wrapper>
           <UserInfo>
-            <Photo
-              source={{
-                uri: 'https://avatars.githubusercontent.com/u/54960643?v=4'
-              }}
-            />
+            <Photo source={{ uri: 'https://avatars.githubusercontent.com/u/54960643?v=4' }} />
             <User>
               <UserGreeting>Olá,</UserGreeting>
               <UserName>Marcio</UserName>
