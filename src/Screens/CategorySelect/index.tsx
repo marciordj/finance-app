@@ -1,10 +1,10 @@
 import React from 'react';
 import { FlatList } from 'react-native-gesture-handler';
 
-import { Category, Container, Header, Icon, Name, Separator, Title, Footer } from './style';
-import Button from '../../components/Form/Button';
+import { data } from '~/data/data';
+import Button from '~/components/Form/Button';
 
-import { data } from '../../data/data';
+import { Category, Container, Header, Icon, Name, Separator, Title, Footer } from './style';
 
 interface Category {
   key: string;

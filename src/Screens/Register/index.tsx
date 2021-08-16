@@ -2,10 +2,10 @@ import React, { useState, useCallback } from 'react';
 
 import { Container, Fields, Form, Header, Title, TransactionTypesContainer } from './style';
 
-import Input from '../../components/Form/Inputs';
-import Button from '../../components/Form/Button';
-import TransactionTypeButton from '../../components/Form/TransactionTypeButton';
-import CategorySelect from '../../components/Form/CategorySelect';
+import Input from '~/components/Form/Inputs';
+import Button from '~/components/Form/Button';
+import TransactionTypeButton from '~/components/Form/TransactionTypeButton';
+import CategorySelect from '~/components/Form/CategorySelect';
 
 const Register = () => {
   const [transactionType, setTransactionType] = useState('');

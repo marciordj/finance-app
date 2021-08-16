@@ -1,7 +1,7 @@
 import React from 'react';
 
-import HighlightCard from '../../components/HighlightCard';
-import TransactionCard, { ITransactionCardProps } from '../../components/TransactionsCard';
+import HighlightCard from '~/components/HighlightCard';
+import TransactionCard, { ITransactionCardProps } from '~/components/TransactionsCard';
 
 import {
   Container,
