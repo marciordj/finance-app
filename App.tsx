@@ -7,7 +7,7 @@ import { useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_700Bold } from
 
 import theme from './src/global/styles/theme';
 
-import CategorySelect from './src/Screens/CategorySelect';
+import Register from './src/Screens/Register';
 
 export default function App() {
   const [fonts] = useFonts({
@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CategorySelect />
+      <Register />
     </ThemeProvider>
   );
 }

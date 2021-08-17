@@ -1,8 +1,8 @@
 import React from 'react';
 import { FlatList } from 'react-native-gesture-handler';
 
-import { data } from '~/data/data';
-import Button from '~/components/Form/Button';
+import { data } from '../../data/data';
+import Button from '../../components/Form/Button';
 
 import { Category, Container, Header, Icon, Name, Separator, Title, Footer } from './style';
 
@@ -37,7 +37,7 @@ const CategorySelect = ({ category, setCategory, closeSelectCategory }: IProps) 
       />
 
       <Footer>
-        <Button title='Selecionar' />
+        <Button title='Selecionar' onPress={closeSelectCategory} />
       </Footer>
     </Container>
   );
