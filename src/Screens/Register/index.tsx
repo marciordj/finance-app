@@ -7,7 +7,7 @@ import TransactionTypeButton from '../../components/Form/TransactionTypeButton';
 import CategorySelectButton from '../../components/Form/CategorySelect';
 
 import { Container, Fields, Form, Header, Title, TransactionTypesContainer } from './style';
-import CategorySelect from '../CategorySelect';
+import CategorySelectModal from '../CategorySelectModal';
 
 const Register = () => {
   const [transactionType, setTransactionType] = useState('');
@@ -50,14 +50,18 @@ const Register = () => {
             />
           </TransactionTypesContainer>
 
-          <CategorySelectButton title='Categoria' onPress={handleOpenCategoryModal} />
+          <CategorySelectButton title={category.name} onPress={handleOpenCategoryModal} />
         </Fields>
 
         <Button title='Enviar' />
       </Form>
 
       <Modal visible={openCategoryModal}>
-        <CategorySelect category='' setCategory={setCategory} closeSelectCategory={handleCloseCategoryModal} />
+        <CategorySelectModal
+          category={category}
+          setCategory={setCategory}
+          closeSelectCategory={handleCloseCategoryModal}
+        />
       </Modal>
     </Container>
   );
