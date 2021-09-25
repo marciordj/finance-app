@@ -12,6 +12,9 @@ import CategorySelectModal from '../CategorySelectModal';
 const Register = () => {
   const [transactionType, setTransactionType] = useState('');
   const [openCategoryModal, setOpenCategoryModal] = useState(false);
+  const [name, setName] = useState('');
+  const [amount, setAmount] = useState('');
+
   const [category, setCategory] = useState({
     key: 'category',
     name: 'Categoria'
@@ -24,6 +27,16 @@ const Register = () => {
   const handleCloseCategoryModal = useCallback(() => setOpenCategoryModal(false), []);
   const handleOpenCategoryModal = useCallback(() => setOpenCategoryModal(true), []);
 
+  const handleRegister = () => {
+    const data = {
+      name,
+      amount,
+      transactionType,
+      category: category.key
+    };
+    console.log(data);
+  };
+
   return (
     <Container>
       <Header>
@@ -32,8 +45,8 @@ const Register = () => {
 
       <Form>
         <Fields>
-          <Input placeholder='Nome' />
-          <Input placeholder='Preço' />
+          <Input placeholder='Nome' onChangeText={setName} />
+          <Input placeholder='Preço' onChangeText={setAmount} />
 
           <TransactionTypesContainer>
             <TransactionTypeButton
@@ -53,7 +66,7 @@ const Register = () => {
           <CategorySelectButton title={category.name} onPress={handleOpenCategoryModal} />
         </Fields>
 
-        <Button title='Enviar' />
+        <Button title='Enviar' onPress={handleRegister} />
       </Form>
 
       <Modal visible={openCategoryModal}>
