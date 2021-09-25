@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { Modal } from 'react-native';
+import { useForm } from 'react-hook-form';
 
-import Input from '../../components/Form/Inputs';
+import InputForm from '../../components/InputForm';
 import Button from '../../components/Form/Button';
 import TransactionTypeButton from '../../components/Form/TransactionTypeButton';
 import CategorySelectButton from '../../components/Form/CategorySelect';
@@ -9,16 +10,21 @@ import CategorySelectButton from '../../components/Form/CategorySelect';
 import { Container, Fields, Form, Header, Title, TransactionTypesContainer } from './style';
 import CategorySelectModal from '../CategorySelectModal';
 
+interface IDataForm {
+  name: string;
+  amount: string;
+}
+
 const Register = () => {
   const [transactionType, setTransactionType] = useState('');
   const [openCategoryModal, setOpenCategoryModal] = useState(false);
-  const [name, setName] = useState('');
-  const [amount, setAmount] = useState('');
 
   const [category, setCategory] = useState({
     key: 'category',
     name: 'Categoria'
   });
+
+  const { control, handleSubmit } = useForm();
 
   const handleTransactionType = useCallback((type: 'up' | 'down') => {
     return setTransactionType(type);
@@ -27,10 +33,10 @@ const Register = () => {
   const handleCloseCategoryModal = useCallback(() => setOpenCategoryModal(false), []);
   const handleOpenCategoryModal = useCallback(() => setOpenCategoryModal(true), []);
 
-  const handleRegister = () => {
+  const handleRegister = (form: IDataForm) => {
     const data = {
-      name,
-      amount,
+      name: form.name,
+      amount: form.amount,
       transactionType,
       category: category.key
     };
@@ -45,8 +51,8 @@ const Register = () => {
 
       <Form>
         <Fields>
-          <Input placeholder='Nome' onChangeText={setName} />
-          <Input placeholder='Preço' onChangeText={setAmount} />
+          <InputForm name='name' control={control} placeholder='Nome' />
+          <InputForm name='amount' control={control} placeholder='Preço' />
 
           <TransactionTypesContainer>
             <TransactionTypeButton
@@ -66,7 +72,7 @@ const Register = () => {
           <CategorySelectButton title={category.name} onPress={handleOpenCategoryModal} />
         </Fields>
 
-        <Button title='Enviar' onPress={handleRegister} />
+        <Button title='Enviar' onPress={handleSubmit(handleRegister)} />
       </Form>
 
       <Modal visible={openCategoryModal}>
